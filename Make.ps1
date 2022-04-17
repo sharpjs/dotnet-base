@@ -82,18 +82,18 @@ function Main {
 
 function Update-LocalTools {
     Write-Phase "Update Local Tools"
-    Invoke-DotNetExe tool update dotnet-reportgenerator-globaltool
+    Invoke-DotNet tool update dotnet-reportgenerator-globaltool
 }
 
 function Invoke-Build {
     Write-Phase "Build"
-    Invoke-DotNetExe build --configuration:$Configuration
+    Invoke-DotNet build --configuration:$Configuration
 }
 
 function Invoke-Test {
     Write-Phase "Test$(if ($Coverage) {" + Coverage"})"
     Remove-Item coverage\raw -Recurse -ErrorAction SilentlyContinue
-    Invoke-DotNetExe -Arguments @(
+    Invoke-DotNet -Arguments @(
         "test"
         "--nologo"
         "--no-build"
@@ -107,8 +107,8 @@ function Invoke-Test {
 
 function Export-CoverageReport {
     Write-Phase "Coverage Report"
-    Invoke-DotNetExe -Arguments "tool", "restore"
-    Invoke-DotNetExe -Arguments @(
+    Invoke-DotNet -Arguments "tool", "restore"
+    Invoke-DotNet -Arguments @(
         "reportgenerator"
         "-reports:coverage\raw\**\coverage.opencover.xml"
         "-targetdir:coverage"
@@ -117,13 +117,13 @@ function Export-CoverageReport {
     )
 }
 
-function Invoke-DotNetExe {
+function Invoke-DotNet {
     param (
         [Parameter(Mandatory, ValueFromRemainingArguments)]
         [string[]] $Arguments
     )
-    & dotnet.exe $Arguments
-    if ($LASTEXITCODE -ne 0) { throw "dotnet.exe exited with an error." }
+    & dotnet $Arguments
+    if ($LASTEXITCODE -ne 0) { throw "dotnet exited with an error." }
 }
 
 function Write-Phase {
