@@ -100,7 +100,7 @@ function Invoke-Clean {
         "-fxd",               # Delete all untracked files in directory tree
         "-e", "*.suo",        # Keep Visual Studio <  2015 local options
         "-e", "*.user",       # Keep Visual Studio <  2015 local options
-        "-e", ".vs/",         # Keep Visual Studio >= 2015 local options
+        "-e", ".vs/"          # Keep Visual Studio >= 2015 local options
 }
 
 function Invoke-Build {
