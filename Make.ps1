@@ -23,23 +23,23 @@
 param (
     # Build.
     [Parameter(Mandatory, ParameterSetName="Build")]
-    [switch] $Build,
-
+    [switch] $Build
+,
     # Build, run tests.
     [Parameter(ParameterSetName="Test")]
-    [switch] $Test,
-
+    [switch] $Test
+,
     # Build, run tests, produce code coverage report.
     [Parameter(Mandatory, ParameterSetName="Coverage")]
-    [switch] $Coverage,
-
+    [switch] $Coverage
+,
     # The configuration to build: Debug or Release.  The default is Debug.
     [Parameter(ParameterSetName="Build")]
     [Parameter(ParameterSetName="Test")]
     [Parameter(ParameterSetName="Coverage")]
     [ValidateSet("Debug", "Release")]
-    [string] $Configuration = "Debug",
-
+    [string] $Configuration = "Debug"
+,
     # Update .NET CLI 'local tool' plugins.
     [Parameter(Mandatory, ParameterSetName="UpdateLocalTools")]
     [switch] $UpdateLocalTools
