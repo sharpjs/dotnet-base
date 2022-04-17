@@ -21,6 +21,10 @@
 #>
 [CmdletBinding(DefaultParameterSetName="Test")]
 param (
+    # Clean.
+    [Parameter(Mandatory, ParameterSetName="Clean")]
+    [switch] $Clean
+,
     # Build.
     [Parameter(Mandatory, ParameterSetName="Build")]
     [switch] $Build
@@ -69,6 +73,11 @@ function Main {
         return
     }
 
+    if ($Clean) {
+        Invoke-Clean
+        return
+    }
+
     Invoke-Build
 
     if ($Test -or $Coverage) {
@@ -83,6 +92,15 @@ function Main {
 function Update-LocalTools {
     Write-Phase "Update Local Tools"
     Invoke-DotNet tool update dotnet-reportgenerator-globaltool
+}
+
+function Invoke-Clean {
+    Write-Phase "Clean"
+    Invoke-Git "clean",
+        "-fxd",               # Delete all untracked files in directory tree
+        "-e", "*.suo",        # Keep Visual Studio <  2015 local options
+        "-e", "*.user",       # Keep Visual Studio <  2015 local options
+        "-e", ".vs/",         # Keep Visual Studio >= 2015 local options
 }
 
 function Invoke-Build {
@@ -124,6 +142,15 @@ function Invoke-DotNet {
     )
     & dotnet $Arguments
     if ($LASTEXITCODE -ne 0) { throw "dotnet exited with an error." }
+}
+
+function Invoke-Git {
+    param (
+        [Parameter(Mandatory, ValueFromRemainingArguments)]
+        [string[]] $Arguments
+    )
+    & git $Arguments
+    if ($LASTEXITCODE -ne 0) { throw "git exited with an error." }
 }
 
 function Write-Phase {
