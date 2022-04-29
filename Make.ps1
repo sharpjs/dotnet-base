@@ -96,11 +96,12 @@ function Update-LocalTools {
 
 function Invoke-Clean {
     Write-Phase "Clean"
-    Invoke-Git "clean",
-        "-fxd",               # Delete all untracked files in directory tree
+    Invoke-Git -Arguments @(
+        "clean", "-fxd",      # Delete all untracked files in directory tree
         "-e", "*.suo",        # Keep Visual Studio <  2015 local options
         "-e", "*.user",       # Keep Visual Studio <  2015 local options
         "-e", ".vs/"          # Keep Visual Studio >= 2015 local options
+    )
 }
 
 function Invoke-Build {
