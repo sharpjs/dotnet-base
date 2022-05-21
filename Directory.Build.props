@@ -32,7 +32,7 @@
     <Copyright>© $([System.DateTime]::UtcNow.Year) $(Authors)</Copyright>
     <PackageLicenseExpression>ISC</PackageLicenseExpression>
     <PackageProjectUrl>https://github.com/sharpjs/MyProject</PackageProjectUrl>
-    <PackageTags>TagA TagB</PackageTags>
+    <PackageTags>foo bar</PackageTags>
     <PackageReleaseNotes>$(PackageProjectUrl)/blob/main/CHANGES.md</PackageReleaseNotes>
     <PackageIcon>icon.png</PackageIcon>
     <RepositoryType>git</RepositoryType>
