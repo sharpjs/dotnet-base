@@ -62,7 +62,7 @@ $Command = $PSCmdlet.ParameterSetName
 if ($Command -eq "Test") { $Test = $true }
 
 # http://patorjk.com/software/taag/#p=display&f=Slant
-Write-Host -ForegroundColor Cyan @' 
+Write-Host -ForegroundColor Cyan @'
 
         __  ___      ____               _           __ 
        /  |/  /_  __/ __ \_________    (_)__  _____/ /_
@@ -94,7 +94,7 @@ function Main {
     if ($Coverage) {
         Export-CoverageReport
     }
-} 
+}
 
 function Update-LocalTools {
     Write-Phase "Update Local Tools"
