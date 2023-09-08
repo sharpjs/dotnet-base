@@ -100,7 +100,7 @@ jobs:
         uses: actions/upload-artifact@v3
         #url: https://github.com/actions/upload-artifact
         with:
-          name: Packages
+          name: Modules
           path: ${{ runner.temp }}/dist
           if-no-files-found: error
 
