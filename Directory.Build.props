@@ -24,6 +24,7 @@
     <PackageProjectUrlRaw>$(PackageProjectUrl.Replace("github", "raw.githubusercontent"))</PackageProjectUrlRaw>
     <PackageIcon>icon.png</PackageIcon>
     <PackageIconUrl>$(PackageProjectUrlRaw)/main/icon.png</PackageIconUrl>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
     <PackageReleaseNotes>$(PackageProjectUrl)/blob/main/CHANGES.md</PackageReleaseNotes>
     <PackageTags>foo bar</PackageTags>
     <RepositoryType>git</RepositoryType>

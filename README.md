@@ -1,4 +1,4 @@
-# MyProject
+## About
 
 Short description of the project.
 
