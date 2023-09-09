@@ -21,9 +21,11 @@
     <Copyright>© $([System.DateTime]::UtcNow.Year) $(Authors)</Copyright>
     <PackageLicenseExpression>ISC</PackageLicenseExpression>
     <PackageProjectUrl>https://github.com/sharpjs/MyProject</PackageProjectUrl>
-    <PackageTags>foo bar</PackageTags>
-    <PackageReleaseNotes>$(PackageProjectUrl)/blob/main/CHANGES.md</PackageReleaseNotes>
+    <PackageProjectUrlRaw>$(PackageProjectUrl.Replace("github", "raw.githubusercontent"))</PackageProjectUrlRaw>
     <PackageIcon>icon.png</PackageIcon>
+    <PackageIconUrl>$(PackageProjectUrlRaw)/main/icon.png</PackageIconUrl>
+    <PackageReleaseNotes>$(PackageProjectUrl)/blob/main/CHANGES.md</PackageReleaseNotes>
+    <PackageTags>foo bar</PackageTags>
     <RepositoryType>git</RepositoryType>
     <RepositoryUrl>$(PackageProjectUrl).git</RepositoryUrl>
   </PropertyGroup>
