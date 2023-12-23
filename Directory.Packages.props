@@ -18,6 +18,9 @@
     <GlobalPackageReference Include="SauceControl.InheritDoc"             Version="2.0.0" />
     <GlobalPackageReference Include="Subatomix.Build.Versioning.Semantic" Version="1.0.1" />
   </ItemGroup>
+  <ItemGroup Condition="'$(IsTestProject)' != 'true'">
+    <GlobalPackageReference Include="Microsoft.SourceLink.GitHub"         Version="8.0.0" />
+  </ItemGroup>
 
   <ItemGroup>
     <!--<PackageVersion Include="..." Version="..." />-->
