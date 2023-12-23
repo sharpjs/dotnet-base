@@ -31,11 +31,6 @@
     <Using Remove="System.Net.Http" />
   </ItemGroup>
 
-  <!-- Versioning -->
-  <ItemGroup>
-    <PackageReference Include="Subatomix.Build.Versioning.Semantic" Version="1.0.1" PrivateAssets="all" />
-  </ItemGroup>
-
   <!-- <inheritdoc/> support -->
   <ItemGroup>
     <PackageReference Include="SauceControl.InheritDoc" Version="1.3.0" PrivateAssets="all" />

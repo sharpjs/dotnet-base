@@ -1,0 +1,25 @@
+<Project>
+
+  <!--
+    Copyright 2023 Jeffrey Sharp
+    SPDX-License-Identifier: ISC
+  -->
+
+  <!--
+    Central Package Management
+    https://learn.microsoft.com/en-us/nuget/consume-packages/central-package-management
+  -->
+
+  <PropertyGroup>
+    <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <GlobalPackageReference Include="Subatomix.Build.Versioning.Semantic" Version="1.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!--<PackageVersion Include="..." Version="..." />-->
+  </ItemGroup>
+
+</Project>
