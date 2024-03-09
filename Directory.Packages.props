@@ -15,15 +15,16 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <GlobalPackageReference Include="SauceControl.InheritDoc"             Version="2.0.1" />
-    <GlobalPackageReference Include="Subatomix.Build.Versioning.Semantic" Version="1.0.1" />
-  </ItemGroup>
-  <ItemGroup Condition="'$(IsTestProject)' != 'true'">
-    <GlobalPackageReference Include="Microsoft.SourceLink.GitHub"         Version="8.0.0" />
+    <!--<PackageVersion Include="..." Version="..." />-->
   </ItemGroup>
 
   <ItemGroup>
-    <!--<PackageVersion Include="..." Version="..." />-->
+    <GlobalPackageReference Include="SauceControl.InheritDoc"             Version="2.0.1" />
+    <GlobalPackageReference Include="Subatomix.Build.Versioning.Semantic" Version="1.0.1" />
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(IsTestProject)' != 'true'">
+    <GlobalPackageReference Include="Microsoft.SourceLink.GitHub"         Version="8.0.0" />
   </ItemGroup>
 
 </Project>
