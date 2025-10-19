@@ -58,6 +58,21 @@ jobs:
           -p:Counter=${{ github.run_number }}
           -p:RepositoryCommit=${{ github.sha }}
 
+      - name: Publish Version
+        shell: pwsh
+        run: |
+          Add-Content $env:GITHUB_STEP_SUMMARY @"
+          |            |                                   |
+          |:-----------|:----------------------------------|
+          | Version    | ``$env:VERSION``                  |
+          | Branch/Tag | ``$env:GITHUB_REF`` $env:HEAD_REF |
+          | Commit     | ``$env:GITHUB_SHA`` $env:HEAD_SHA |`n`n
+          "@
+        env:
+          VERSION:  ${{ steps.stamp.outputs.version }}
+          HEAD_REF: ${{ github.event.pull_request && format('(head = `{0}`)', github.event.pull_request.head.ref) }}
+          HEAD_SHA: ${{ github.event.pull_request && format('(head = `{0}`)', github.event.pull_request.head.sha) }}
+
       - name: Restore NuGet Packages
         run: dotnet restore
 
