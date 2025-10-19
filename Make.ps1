@@ -107,7 +107,7 @@ function Invoke-Build {
 
 function Invoke-Test {
     Write-Phase "Test$(if ($Coverage) {" + Coverage"})"
-    Remove-Item coverage\raw -Recurse -ErrorAction SilentlyContinue
+    Remove-Item coverage\raw -Recurse -ErrorAction Ignore
     Invoke-DotNet -Arguments @(
         "test"
         "--nologo"
