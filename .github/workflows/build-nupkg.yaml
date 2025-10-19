@@ -82,6 +82,16 @@ jobs:
           reporttypes: Html;MarkdownSummaryGithub;Badges
           verbosity: Warning
 
+      - name: Publish Coverage Summary
+        shell: pwsh
+        run: |
+          Add-Content $env:GITHUB_STEP_SUMMARY @(
+            "## Coverage`n"
+            Select-String '^#' $env:REPORT_PATH -NotMatch -Raw
+          )
+        env:
+          REPORT_PATH: ${{ runner.temp }}\coverage\SummaryGithub.md
+
       - name: Save Coverage Report
         uses: actions/upload-artifact@v4
         #url: https://github.com/actions/upload-artifact
@@ -89,13 +99,6 @@ jobs:
           name: Coverage Report
           path: ${{ runner.temp }}\coverage
           if-no-files-found: error
-
-      - name: Publish Coverage Summary
-        shell: pwsh
-        run: >
-          Get-Content $env:REPORT_PATH -Raw >> $env:GITHUB_STEP_SUMMARY
-        env:
-          REPORT_PATH: ${{ runner.temp }}\coverage\SummaryGithub.md
 
       - name: Save Package
         uses: actions/upload-artifact@v4
