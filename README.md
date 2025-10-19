@@ -13,9 +13,6 @@ WIP
 [![NuGet](https://img.shields.io/powershellgallery/v/MyProject.svg)](https://www.powershellgallery.com/packages/MyProject)
 [![NuGet](https://img.shields.io/powershellgallery/dt/MyProject.svg)](https://www.powershellgallery.com/packages/MyProject)
 
-- **Stable(ish):** a prior version has been in private use for years with no
-                   reported defects, but a few changes have been made in
-                   preparation for public release.
 - **Tested:**      100% coverage by automated tests.
 - **Documented:**  IntelliSense on everything.  General usage documentation
                    is in progress.
@@ -26,7 +23,8 @@ WIP
 WIP
 
 <!--
-Install [this NuGet Package](https://www.nuget.org/packages/MyProject) in your project.
+Install [this NuGet Package](https://www.nuget.org/packages/MyProject)
+in your project.
 -->
 
 ## Usage
