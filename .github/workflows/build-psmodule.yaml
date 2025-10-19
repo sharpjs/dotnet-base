@@ -37,11 +37,11 @@ jobs:
 
     steps:
       - name: Check Out Code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v5
         #url: https://github.com/actions/checkout
 
       - name: Configure .NET
-        uses: actions/setup-dotnet@v3
+        uses: actions/setup-dotnet@v5
         #url: https://github.com/actions/setup-dotnet
         with:
           dotnet-version: |
@@ -74,7 +74,7 @@ jobs:
           --results-directory ${{ runner.temp }}/coverage/raw
 
       - name: Prepare Coverage Report
-        uses: danielpalme/ReportGenerator-GitHub-Action@5
+        uses: danielpalme/ReportGenerator-GitHub-Action@v5
         #url: https://github.com/danielpalme/ReportGenerator-GitHub-Action
         with:
           reports: ${{ runner.temp }}/coverage/raw/**/coverage.opencover.xml
@@ -83,7 +83,7 @@ jobs:
           verbosity: Warning
 
       - name: Save Coverage Report
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         #url: https://github.com/actions/upload-artifact
         with:
           name: Coverage Report
@@ -97,7 +97,7 @@ jobs:
           REPORT_PATH: ${{ runner.temp }}/coverage/SummaryGithub.md
 
       - name: Save Module
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         #url: https://github.com/actions/upload-artifact
         with:
           name: Modules
