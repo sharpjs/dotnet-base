@@ -16,6 +16,6 @@ Future release.
 Initial release.
 
 <!--
-  Copyright 2023 Jeffrey Sharp
-  SPDX-License-Identifier: ISC
+  Copyright Subatomix Research Inc.
+  SPDX-License-Identifier: MIT
 -->

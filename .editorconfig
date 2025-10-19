@@ -2,8 +2,8 @@
 # https://editorconfig.org
 # https://aka.ms/editorconfigdocs
 #
-# Copyright 2024 Jeffrey Sharp
-# SPDX-License-Identifier: ISC
+# Copyright Subatomix Research Inc.
+# SPDX-License-Identifier: MIT
 
 root = true
 

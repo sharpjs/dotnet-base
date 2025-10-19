@@ -34,6 +34,6 @@ Install [this NuGet Package](https://www.nuget.org/packages/MyProject) in your p
 WIP
 
 <!--
-  Copyright 2023 Jeffrey Sharp
-  SPDX-License-Identifier: ISC
+  Copyright Subatomix Research Inc.
+  SPDX-License-Identifier: MIT
 -->

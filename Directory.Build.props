@@ -1,8 +1,8 @@
 <Project>
 
   <!--
-    Copyright 2023 Jeffrey Sharp
-    SPDX-License-Identifier: ISC
+    Copyright Subatomix Research Inc.
+    SPDX-License-Identifier: MIT
   -->
 
   <!--
@@ -19,7 +19,7 @@
     <Authors>Jeffrey Sharp</Authors>
     <Company>Subatomix Research Inc.</Company>
     <Copyright>© $([System.DateTime]::UtcNow.Year) $(Authors)</Copyright>
-    <PackageLicenseExpression>ISC</PackageLicenseExpression>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageProjectUrl>https://github.com/sharpjs/MyProject</PackageProjectUrl>
     <PackageProjectUrlRaw>$(PackageProjectUrl.Replace("github", "raw.githubusercontent"))</PackageProjectUrlRaw>
     <PackageIcon>icon.png</PackageIcon>
