@@ -33,8 +33,8 @@
 
   <!-- Build properties -->
   <PropertyGroup>
-    <LangVersion>12</LangVersion>
-    <ImplicitUsings>true</ImplicitUsings>
+    <LangVersion>13</LangVersion>
+    <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <InheritDocEnabled>true</InheritDocEnabled>
   </PropertyGroup>
